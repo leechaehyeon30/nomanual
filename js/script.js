@@ -123,8 +123,8 @@ $(document).ready(function() {
     // document.write(cuHour);
 
     // 새창뜨기
-    let openWin;
-        openWindow = window.open("index_openWin.html","_blank","toolbar=yes,scrollbars=yes,res izable=yes,top=200,left=200,width=600, height=600");
+    // let openWin;
+    //     openWindow = window.open("index_openWin.html","_blank","toolbar=yes,scrollbars=yes,res izable=yes,top=200,left=200,width=600, height=600");
 
     // 네비게이션 슬라이드
     $(".gnb1").mouseenter(function(){
