@@ -106,42 +106,26 @@ $(document).ready(function() {
     showImgGroupSlide(imgGroupCurrentIndex);
 
 
-    // 오류있음 고쳐야함
-    // //로고 변화
-    // let logoImg = document.querySelector("#logo");
-
-    // const d = new Date();
-    // let cuHour = d.getHours();
-
-    // if (cuHour >= 9 && cuHour <= 18) {
-    //     logoImg.setAttribute("src", "./img/header/logo_monr.png");
-    // }else if (cuHour >= 19 && cuHour <= 23) {
-    //     logoImg.setAttribute("src", "./img/header/logo_night.png");
-    // }else if (cuHour >= 0 && cuHour <= 9) {
-    //     logoImg.setAttribute("src", "./img/header/logo_night.png");
-    // }
-    // document.write(cuHour);
-
     // 새창뜨기
     // let openWin;
     //     openWindow = window.open("index_openWin.html","_blank","toolbar=yes,scrollbars=yes,res izable=yes,top=200,left=200,width=600, height=600");
 
     // 네비게이션 슬라이드
-    $(".gnb1").mouseenter(function(){
+    $("#nav_shop").mouseenter(function(){
         $(".subShop").stop().slideDown(1000);
     });
-    $(".gnb1").mouseleave(function(){
+    $("#nav_shop").mouseleave(function(){
         $(".subShop").stop().slideUp(700);
     });
-    $(".gnb2").mouseenter(function(){
+    $("#nav_info").mouseenter(function(){
         $(".subInfo").stop().slideDown(1000);
     });
-    $(".gnb2").mouseleave(function(){
+    $("#nav_info").mouseleave(function(){
         $(".subInfo").stop().slideUp(700);
     });
 
     // 장바구니 여닫기
-    $('.sub3').on('click', function() {
+    $('.sub3, #bag_open').on('click', function() {
         $('.bag').show();
     });
     $('.cls_bag').on('click', function() {
@@ -154,7 +138,7 @@ $(document).ready(function() {
     });
 
     // 모달창 여닫기
-    $('.gnb4').on('click', function() {
+    $('#search_Btn, #modal_open').on('click', function() {
         $('.modal').show();
     });
     $('.close').on('click', function() {

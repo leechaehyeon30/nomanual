@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>노매뉴얼 (노메뉴얼) | NOMANUAL</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/basic.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>노매뉴얼 (노메뉴얼) | NOMANUAL</title>
 </head>
 <body>
     <div class="wrap">
@@ -17,7 +18,7 @@
         <header>
             <nav class="nav1">
                 <ul class="gnb">
-                    <li class="gnb1">
+                    <li id="nav_shop">
                         <a href="index_shop.html">SHOP</a>
                         <ul class="submenu subShop">
                             <li>
@@ -43,7 +44,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="gnb2">
+                    <li id="nav_info">
                         <a href="#">INFO</a>
                         <ul class="submenu subInfo">
                             <li>
@@ -66,23 +67,25 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="gnb3">
-                        <a href="#">ARCHIVE</a>
+                    <li>
+                        <a href="https://nomanual-official.com/" target="_blank">ARCHIVE</a>
                     </li>
-                    <li class="gnb4">
+                    <li id="search_Btn">
                         <a href="#">SERCH</a>
                     </li>
                 </ul>
             </nav>
-            <nav class="mobileNav">
+            <div class="mobileNav">
                 <img src="img/icon/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="메뉴 이미지">
-            </nav>
-            <h1 class="logo">
-                <a href="#">
-                    <img id="logo" src="./img/header/logo_monr.png" alt="로고이미지">
-                </a>
-            </h1>
-            <nav class="nav2">
+            </div>
+            <div>
+                <h1 class="logo">
+                    <a href="#">
+                        <img src="./img/header/logo_monr.png" alt="로고이미지">
+                    </a>
+                </h1>
+            </div>
+            <div class="nav2">
                 <ul class="gnb">
                     <li class="sub1">
                         <a href="#">LOGIN</a>
@@ -95,29 +98,29 @@
                     </li>
                     <li class="sub4">
                         <a href="#">
-                            <img src="img/header/태극기고해상도rgb이미지-jpg.jpg" alt="언어선택 아이콘">
+                            <img src="img/header/korea.jpg" alt="언어선택 아이콘">
                         </a>
                         <ul class="lang_choice">
                             <li>
                                 <a href="#">INTERNATIONAL</a>
-                                <img src="img/header/태극기고해상도rgb이미지-jpg.jpg" alt="한국어">
+                                <img src="img/header/korea.jpg" alt="한국어">
                             </li>
                             <li>
                                 <a href="#">KOREA</a>
-                                <img src="img/header/태극기고해상도rgb이미지-jpg.jpg" alt="한국어">
+                                <img src="img/header/korea.jpg" alt="한국어">
                             </li>
                             <li>
                                 <a href="#">JAPAN</a>
-                                <img src="img/header/태극기고해상도rgb이미지-jpg.jpg" alt="한국어">
+                                <img src="img/header/korea.jpg" alt="한국어">
                             </li>
                         </ul>
                     </li>
                 </ul>
-            </nav>
-            <nav class="mobileNav2">
-                <img src="img/icon/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="">
-                <img src="img/icon/local_mall_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="">
-            </nav>
+            </div>
+            <div class="mobileNav2">
+                <img id="modal_open" src="img/icon/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                <img id="bag_open" src="img/icon/local_mall_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="">
+            </div>
         </header>
         <div class="bag">
             <h2>BAG (0)</h2>
@@ -139,7 +142,7 @@
             </section>
             <section>
                 <article class="sec1">
-                    <h1>BEST ITEM</h1>
+                    <h2>BEST ITEM</h2>
                     <div class="middle">
                         <div class="item">
                             <a href="#">
@@ -175,6 +178,7 @@
                                 <img src="img/main_page/단체14-1.jpg" alt="이미지 슬라이드1">
                                 <img src="img/main_page/Untitleaaad-1-1-512x512.png" alt="이미지슬라이드2">
                                 <img src="img/main_page/imageslide3.png" alt="이미지슬라이드3">
+                                <img src="img/main_page/NMFW24-05-512x640.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -186,7 +190,7 @@
                     </button>
                 </article>
                 <article class="sec3">
-                    <div class="gnb_2">
+                    <div class="product">
                         <ul>
                             <li>
                                 <a href="#">OUTER</a>
@@ -210,12 +214,10 @@
                     </div>
                     <div class="imgblock">
                         <a class="capitem" href="#">
-                            <img src="img/main_page/Group 55.jpg" alt="이미지그룹 1">
-                            <span>H.G.P BALL CAP<br>WASHED BLACK</span>
+                            <img src="img/main_page/product_1.png" alt="이미지그룹 1">
                         </a>
                         <a class="outeritem" href="#">
-                            <img src="img/main_page/Group 56.jpg" alt="이미지그룹 2">
-                            <span>OVERDYED N.F HOODED ZIP-UP <br> WASHED BLACK</span>
+                            <img src="img/main_page/product_2.png" alt="이미지그룹 2">
                         </a>
                     </div>
                 </article>
@@ -245,18 +247,6 @@
             <div class="quicksos">
                 <div class="group">
                     <img class="nom" src="img/footer/float_img.png" alt="내용">
-                    <div class="home">
-                        <img src="img/footer/home_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="홈버튼">
-                        <p>홈</p>
-                    </div>
-                    <div class="chat">
-                        <img src="img/footer/sms_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="대화버튼">
-                        <p>대화</p>
-                    </div>
-                    <div class="set">
-                        <img src="img/footer/settings_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="설정버튼">
-                        <p>설정</p>
-                    </div>
                 </div>
                 <div class="cls_chat">
                     <img src="img/icon/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="닫기버튼">
@@ -264,6 +254,6 @@
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script>
+    
 </body>
 </html>

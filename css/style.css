@@ -1,4 +1,4 @@
-@media all and (max-width:470px){
+@media all and (max-width:500px){
     body{
         overflow-x: hidden;
     }
@@ -18,8 +18,6 @@
     .event .slide{
         position: absolute;
         width: 100%; height: 100%;
-        text-align: center;
-        align-items: center;
         transition: transform 0.5s ease;
     }
     .envet .active{
@@ -30,13 +28,12 @@
     }
     /* 네비게이션 왼쪽 */
     header{
-        width: 100%; height: 80px;
+        width: 100%; height: 60px;
         background-color: #ffffff;
         display: flex;
         align-items: center;
-        clear: both;
         position: relative;
-        z-index: 100;
+        z-index: 10;
     }
     .nav1 .gnb{
         display: none;
@@ -48,11 +45,11 @@
         width: 25px;
     }
     /* 로고이미지 */
-    .logo{
-        position: absolute; left: 45%;
+    header .logo{
+        position: absolute; left: 45%; top: 18%;
     }
-    .logo img{
-        width: 40px;
+    header .logo img{
+        width: 35px;
     }
     /* 네비게이션 오른쪽 */
     .nav2 .gnb{
@@ -90,14 +87,46 @@
         position: fixed; top: 30px; right: 30px;
         color: #ffffff;
     }
+    /* 장바구니 클릭기능 */
     .bag{
+        width: 300px; height: 100vh;
+        position: fixed; right: 0px; top: 0;
+        z-index: 10;
+        background-color: white;
         display: none;
+    }
+    .bag h2{
+        font-size: 18px;
+        font-weight: normal;
+        padding: 30px 50px;
+        display: block;
+    }
+    .bag img{
+        width: 25px;
+        position: absolute; top: 30px; right: 30px;
+        float: right;
+        cursor: pointer;
+    }
+    .bag span{
+        display: block;
+        padding: 25px 50px;
+        font-size: 13px;
+    }
+    .bag button{
+        position: absolute;
+        top: 300px; left: 50%;
+        transform: translate(-50%, 0);
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        padding: 15px 30px;
+        font-size: 12px;
+        cursor: pointer;
     }
     /* 메인비주얼 */
     .visual{
         width: 100%; height: auto;
-        /* clear: both;
-        content: ""; */
         overflow: hidden;
         position: relative;
         display: block;
@@ -109,14 +138,13 @@
     }
     .visual img{
         width: 100%;
-        flex-shrink: 0;
     }
     /* 섹션1 */
     .sec1{
         width: 100%; height: 515px;
         background-color: white;
     }
-    .sec1 h1{
+    .sec1 h2{
         font-size: 20px;
         padding: 20px;
         font-weight: bold;
@@ -131,52 +159,49 @@
     }
     .sec1 .item{
         width: 350px;
-        height: auto; /* 필요에 따라 높이 설정 */
+        height: auto;
         position: relative;
     }
     .sec1 .item a {
-        margin: 10px 0;               /* 이미지 간격 조정 */
+        margin: 10px 0;
         display: none;
     }
     .sec1 .item img{
         width: 100%;
-        height: auto;                  /* 비율 유지 */
+        height: auto;
         transition: transform 0.3s;    /* 슬라이드 효과를 위한 트랜지션 */
     }
     .item a:first-child {
         display: block; /* 첫 번째 이미지만 표시 */
     }
     .sec1 .prev{
-        width: 35px; height: 35px;
-        background-color: rgba(0, 0, 0, 0.3);
+        width: 40px; height: 40px;
         position: absolute; left: 30px; top: 170px;
-        border: none;
-        border-radius: 50px;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid black;
+        border-radius: 10px;
     }
     .sec1 .prev img{
         width: 25px;
-        margin: 3px 8px;
+        margin: 6.5px 11px;
     }
     .sec1 .next{
-        width: 35px; height: 35px;
-        background-color: rgba(0, 0, 0, 0.3);
+        width: 40px; height: 40px;
         position: absolute; right: 30px; top: 170px;
-        border: none;
-        border-radius: 50px;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid black;
+        border-radius: 10px;
     }
     .sec1 .next img{
         width: 25px;
-        margin: 3px 5px;
+        margin: 6.5px 7px;
     }
     .sec1 .underbar{
         width: 100%; height: 56px;
-        /* background-color: rgb(221, 240, 240); */
         position: relative;
-        justify-content: center; 
-        align-items: center;
     }
     .sec1 .long{
-        display: none;
+        position: absolute; top: 0; left: 25px;
         width: 80%; height: 2px;
         border: none;
         background-color: #c0c0c0;
@@ -184,72 +209,78 @@
     .sec1 .short{
         position: absolute; top: 0; left: 25px;
         width: 10%; height: 2px;
-        border: none;
-        color: black;
+        /* border: none; */
+        color: rgb(79, 79, 79);
     }
     /* 섹션2 */
     .sec2{
-        width: 100%; height: 383px;
+        width: 100%; height: 100vw;
         background-color: white;
         position: relative;
     }
-    .sec2 img:nth-child(1){
-        display: none;
-    }
     .sec2 .frame{
-        width: 100%;
-        overflow: hidden;
         position: relative;
+        width: 100%; height: 100vw;
+        overflow: hidden;
     }
     .sec2 .imgGroup{
-        width: 100%;
         display: flex;
         transition: transform 0.5s ease;
     }
     .sec2 .imgGroup img{
         width: 100%;
-        flex-shrink: 0;
+        object-fit: cover;
+        display: block;
+    }
+    .sec2 .img1 {
+        display: none;
     }
     .sec2 #prev2{
-        width: 30px; height: 30px;
-        background-color: rgba(0, 0, 0, 0.3);
+        width: 40px; height: 40px;
         position: absolute; left: 30px; top: 170px;
-        border: none;
-        display: none;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .sec2 #prev2 img{
+        width: 25px;
+        margin: 6.5px 11px;
     }
     .sec2 #next2{
-        width: 30px; height: 30px;
-        background-color: rgba(0, 0, 0, 0.3);
+        width: 40px; height: 40px;
         position: absolute; right: 30px; top: 170px;
-        border: none;
-        display: none;
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .sec2 #next2 img{
+        width: 25px;
+        margin: 6.5px 6.5px;
     }
 
     /* 섹션3 */
     .sec3{
-        width: 100%; height: 720px;
+        width: 100%; height: 169vw;
         background-color: white;
     }
-    .sec3 .gnb_2{
-        width: 100%; height: 70px;
+    .sec3 .product{
+        width: 100vw; height: 70px;
     }
-    .sec3 .gnb_2 ul{
+    .sec3 .product ul{
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 20px;
     }
-    .sec3 .gnb_2 a{
+    .sec3 .product a{
         display: block;
-        font-size: 15px;
+        font-size: 12px;
         font-weight: bold;
         padding: 10px;
-        transition: 0.3s;
     }
-    .sec3 .gnb_2 a:hover{
+    .sec3 .product a:hover{
         transform: scale(1.1);
         background-color: rgba(0, 0, 0, 0.2);
-
     }
     .sec3 .imgblock{
         width: 100%;
@@ -268,20 +299,6 @@
     }
     .sec3 .outeritem img{
         width: 100%;
-    }
-    .sec3 .capitem span{
-        display: block;
-        position: absolute; top: -190px; left: 100px;
-        font-size: 13px;
-        text-align: center;
-        font-weight: bold;
-    }
-    .sec3 .outeritem span{
-        display: block;
-        position: absolute; bottom: 230px; right: 125px;
-        font-size: 13px;
-        text-align: center;
-        font-weight: bold;
     }
     /* 푸터 */
     footer{
@@ -308,83 +325,58 @@
 
     /* 플로팅버튼 */
     .floating{
-        position: fixed; right: 20px; bottom: 120px;
+        position: fixed; right: 20px; bottom: 20px;
         width: 80px; height: 80px;
-        display: none;
     }
     .floating .quick{
-        position: absolute; right: 5px; top: 10px;
+        position: absolute;
         z-index: 1;
     }
     .floating .quick img{
+        width: 80px; height: 80px;
         cursor: pointer;
     }
-    .floating .p{
+    .floating .quicksos{
         float: left;
-        width: 80px; height: 80px; border-radius: 40px;
-        background-color: #f6f6f6;
+        width: 10px; height: 10px; border-radius: 40px;
         overflow: hidden;
         color: white;
         padding: 30px;
-        position: absolute; right: 55px; bottom: -79px;
+        position: absolute;
     }
-    .floating .p .nom{
+    .group{
+        width: 400px;
+        height: 710px;
+        border-radius: 30px;
+        overflow: hidden;
+        background-color: #f6f6f6;
+        color: white;
+        box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.4);
+        position: fixed; bottom: 90px; right: 20px;
+    }
+    .floating .quicksos .nom{
+        width: 400px;
+    }
+    .floating .quicksos img{
         width: 330px;
-        padding-bottom: 30px;
-    }
-    .floating .p .group div{
-        float: left;
-        color: #333;
-        font-size: 13px;
-        text-align: center;
-    }
-    .floating .p .home{
-        display: block;
-        padding: 25px 40px;
-    }
-    .floating .p .chat{
-        display: block;
-        padding: 30px 40px;
-    }
-    .floating .p .set{
-        display: block;
-        padding: 30px 40px;
-    }
-    .floating .p .home img{
-        width: 30px;
-    }
-    .floating .p .chat img{
-        width: 25px;
-    }
-    .floating .p .set img{
-        width: 30px;
     }
 }
-@media all and (min-width:471px) and (max-width:1920px) {
+@media all and (min-width:500px) and (max-width:1920px) {
     body{
-        overflow-x: hidden;
+        background-color: white;
     }
     .wrap{
-        width: 100%; 
-        margin: 0 auto;
+        width: 100vw; height: 100vh; 
         position: relative;
-    }
-    
-    .head{
-        width: 100vw; height: 130px;
-        position: fixed; top: 0; left: 50%;
-        transform: translate(-50%, 0);
     }
     /* 상단이벤트창 */
     .event{
-        width: 100%; height: 30px;
+        width: 100vw; height: 30px;
         background-color: black;
         color: white;
         text-align: center;
         font-size: 18px;
         font-weight: 600;
-        align-items : center;
-        /* position: relative; */
         overflow: hidden;
         padding-top: 5px;
         position: fixed; top: 0; left: 50%;
@@ -394,7 +386,6 @@
     .event .slide{
         position: absolute;
         width: 100%; height: 100%;
-        text-align: center;
         transition: transform 0.5s ease;
     }
     .envet .active{
@@ -405,11 +396,10 @@
     }
     /* 네비게이션 왼쪽 */
     header{
-        width: 100%; height: 70px;
-        margin: 0 auto;
+        width: 100vw; height: 70px;
+        /* margin: 0 auto; */
         background-color: #ffffff;
         display: flex;
-        /* position: absolute;  */
         z-index: 10;
         align-items: center;
         text-align: center;
@@ -426,40 +416,31 @@
     }
     .nav1 .gnb a{
         display: block;
-        width: 130px; height: 50px;
-        font-size: 15px;
+        width: 120px; height: 50px;
+        font-size: 13px;
     }
     .nav1 .submenu{
         display: none;
         background-color: #ffffff;
         width: 350px; height: 330px;
         padding: 20px;
+        padding-left: 40px;
         position: absolute; 
         left: 0px; top: 70px;
         text-align: left;
     }
+    .nav1 .submenu a{
+        width: 160px;
+        height: 50px;
+    }
     .nav1 .subShop{
-        width: 350px; height: 380px;
-        background-color: white;
-    }
-    .nav1 .subShop a{
-        position: relative;
-        z-index: 10;
-        width: 350px; height: 50px;
-    }
-    .nav1 .subInfo a{
-        position: relative;
-        z-index: 10;
-        width: 350px; height: 50px;
-    
+        height: 380px;
     }
     /* 로고이미지 */
     header .logo{
         justify-content: center;
+        align-items: center;
         margin-top: 10px;
-        /* display: flex; */
-        /* margin-left: 24%; */
-        /* position: absolute; z-index: 10; */
     }
     header .logo img{
         width: 40px;
@@ -471,35 +452,26 @@
     }
     .nav2 .gnb a{
         display: block;
-        width: 130px; height: 50px;
+        width: 120px; height: 50px;
         align-items : center;
-        /* padding-top: 30px; */
-        /* margin-right: 10px; */
-        font-size: 15px;
+        font-size: 13px;
     }
-    .nav2 .gnb .sub3 a{
-        margin-right: -20px;
-    }
-    .nav2 .gnb .sub4 a{
-        width: 150px;
-        margin-top: -5px;
+    .nav2 .gnb .sub4>a{
+        width: 90px;
+        margin-right: 20px;
     }
     .nav2 .gnb .sub4 a img{
-        margin-top: 5px;
-        width: 30px;
+        width: 25px;
     }
-    .mobileNav2{
+    .mobileNav2, .mobileNav{
         display: none;
     }
-    .mobileNav{
-        display: none;
-    }
-
+    /* 장바구니 클릭기능 */
     .bag{
+        width: 500px; height: 100vh;
         position: fixed; right: 0px; top: 0;
         z-index: 10;
         background-color: white;
-        width: 500px; height: 2000px;
         display: none;
     }
     .bag h2{
@@ -515,7 +487,6 @@
         cursor: pointer;
     }
     .bag span{
-        /* margin-top: 100px; */
         display: block;
         padding: 50px;
         font-size: 13px;
@@ -524,15 +495,15 @@
         position: absolute;
         top: 300px; left: 50%;
         transform: translate(-50%, 0);
-        background-color: black;
         border: none;
         border-radius: 5px;
+        background-color: black;
         color: white;
         padding: 15px 80px;
         font-size: 12px;
         cursor: pointer;
     }
-
+    /* 언어선택 호버기능 */
     .nav2 .gnb .sub4 ul{
         display: none;
     }
@@ -540,37 +511,30 @@
         display: flex;
     }
     .lang_choice {
-        width: 400px;
-        height: 2000px;
+        width: 400px; height: 100vh;
         background-color: white;
-        position: absolute;
-        right: 0;
-        top: 70px;
+        position: absolute; right: 0; top: 70px;
         z-index: 10;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
     }
-    
     .lang_choice li {
         display: flex;
         align-items: center;
         margin-bottom: 10px;
         margin-right: 20px;
     }
-    
     .lang_choice li a {
         padding: 20px 15px;
         margin-right: 10px;
         text-align: right;
-        font-size: 15px;
-        
+        font-size: 13px;
     }
-    
     .lang_choice>li>img {
         width: 25px;
-    }    
-    /* 모달창 */
+    }
+    /* 검색버튼 클릭 창 */
     .modal{
         width: 100%; height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
@@ -598,21 +562,16 @@
         width: 40px;
         cursor: pointer;
         position: absolute; right: 100px; top: 100px;
-        /* font-size: 20px;
-        font-weight: bold; */
     }
-    
     /* 메인비주얼 */
     .visual{
         width: 100vw; height: 50vw;
-        display: flex;
         position: relative;
         z-index: 0;
-        /* overflow: hidden; */
         margin-top: 100px;
+        overflow: hidden;
     }
     .visual .slider{
-        width: 100vw;
         display: flex;
     }
     .visual .img1{
@@ -621,71 +580,61 @@
     .visual .img{
         width: 55vw; height: auto;
     }
-    
     /* 섹션1 */
     .sec1{
-        width: 100vw; height: auto;
+        width: 100vw; height: 36vw;
     }
-    .sec1 h1{
-        font-size: 28px;
+    .sec1 h2{
+        font-size: 25px;
         font-weight: bold;
-        padding: 40px;
+        padding: 2vw;
     }
     .sec1 .middle{
         position: relative;
         width: 100%; height: 22vw;
-        margin-bottom: 30px;
+        margin-bottom: 1vw;
     }
     .sec1 .item{
         width: 95%;
-        /* margin-left: 22px; */
         display: flex;
         margin: 0 auto;
     }
     .sec1 .item img{
         width: 95%;
         display: block;
-        
-        /* margin-right: 10px; */
     }
     .sec1 .prev{
         width: 60px; height: 60px;
-        background-color: rgba(0, 0, 0, 0.1);
-        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid black; 
+        border-radius: 10px;
         padding: 5px 13px;
         position: absolute; left: 20px; top: 120px;
     }
-    .sec1 .prev img{
+    .sec1 .prev img, .next img{
         width: 50px;
     }
     .sec1 .next{
         width: 60px; height: 60px;
-        background-color: rgba(0, 0, 0, 0.1);
-        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid black; 
+        border-radius: 10px;
         padding-top: 5px;
         position: absolute; right: 20px; top: 120px;
-    }
-    .sec1 .next img{
-        width: 50px;
-        /* margin: -0px -5px; */
     }
     .sec1 .underbar{
         width: 100%; height: 100px;
         position: relative;
-        /* align-items: center;
-        justify-content: center; */
         display: grid;
         place-items: center;
-        padding-top: 20px;
     }
-    .sec1 .long{
+    .underbar .long{
         width: 90%; height: 2px;
         position: absolute;
         border: none;
         background-color: #c0c0c0;
-        /* display: none; */
     }
-    .sec1 .short{
+    .underbar .short{
         width: 148px; height: 2px;
         position: absolute; left: auto;
         border: none;
@@ -708,7 +657,6 @@
         width: 60vw; height: 35vw;
         overflow: hidden;
         position: relative;
-        padding: 10px;
     }
     .sec2 .imgGroup{
         width: 300vw;
@@ -717,28 +665,26 @@
     }
     
     .sec2 .imgGroup img{
-        width: 100%; height: 100%;
+        width: 100vw; height: 100vh;
     }
     .sec2 .prev{
         width: 60px; height: 60px;
-        background-color: rgba(0, 0, 0, 0.1);
-        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid black; 
+        border-radius: 10px;
         padding: 5px 13px;
         position: absolute; left: 42%; top: 270px;
     }
-    .sec2 .prev img{
+    .sec2 .prev img, .sec2 .next img{
         width: 50px;
     }
     .sec2 .next{
         width: 60px; height: 60px;
-        background-color: rgba(0, 0, 0, 0.1);
-        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid black; 
+        border-radius: 10px;
         padding-top: 5px;
         position: absolute; right: 20px; top: 270px;
-    }
-    .sec2 .next img{
-        width: 50px;
-        /* margin: -0px -5px; */
     }
 
     /* 섹션 3 */
@@ -746,16 +692,16 @@
         width: 100%; height: 45vw;
         display: block;
     }
-    .sec3 .gnb_2{
+    .sec3 .product{
         width: 100%; height: 6vw;
         display: grid;
         place-content: center;
     }
-    .sec3 .gnb_2 ul{
+    .sec3 .product ul{
         display: flex;
         /* align-items: center; */
     }
-    .sec3 .gnb_2 a{
+    .sec3 .product a{
         display: block;
         font-size: 18px;
         font-weight: bold;
@@ -763,7 +709,7 @@
         border-radius: 5px;
         margin: 0px 40px;
     }
-    .sec3 .gnb_2 a:hover{
+    .sec3 .product a:hover{
         background-color: rgba(0, 0, 0, 0.2);
     }
     .sec3 .imgblock{
@@ -780,28 +726,18 @@
     }
     .sec3 .outeritem{
         width: 55%; height: auto;
+        margin-left: -1vw;
         overflow: hidden;
     }
     .sec3 .outeritem img{
         width: 100%;
     }
-    .sec3 .capitem span{
-        position: absolute; top: 310px; left: 120px;
-        font-size: 1.5vw;
-        text-align: center;
-        font-weight: bold;
-    }
-    .sec3 .outeritem span{
-        position: absolute; top: 100px; right: 300px;
-        font-size: 1.5vw;
-        text-align: center;
-        font-weight: bold;
-    }
-    
     /* 푸터 */
     footer{
         width: 100vw; height: 125px;
+        margin-top: 1vw;
         display: block;
+        background-color: #eee;
     }
     footer ul{
         width: 100vw; height: 60px;
@@ -845,7 +781,6 @@
     
     .quicksos {
         transform-origin: bottom;
-        
         position: absolute;
         bottom: 0;
         right: 0;
@@ -853,39 +788,22 @@
     }
     .group{
         width: 400px;
-        height: 700px;
+        height: 710px;
         border-radius: 30px;
         overflow: hidden;
         background-color: #f6f6f6;
-        padding: 30px;
         color: white;
         box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.4);
         position: fixed; bottom: 90px; right: 20px;
     }
     .floating .quicksos .nom{
-        width: 330px;
-        padding-bottom: 30px;
+        width: 400px;
     }
     .floating .quicksos .group div{
         float: left;
         color: #333;
         font-size: 13px;
         text-align: center;
-    }
-    .floating .quicksos .home{
-        display: block;
-        padding: 25px 40px;
-    }
-    .floating .quicksos .chat{
-        display: block;
-        padding: 30px 40px;
-    }
-    .floating .quicksos .set{
-        display: block;
-        padding: 30px 40px;
-    }
-    .floating .quicksos .home img, .chat img, .set img{
-        width: 30px;
     }
     .cls_chat{
         width: 60px; height: 60px;

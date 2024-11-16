@@ -1,30 +1,24 @@
 .wrap{
-    width: 1920px; 
-    margin: 0 auto;
+    width: 100vw; height: 100vh; 
     position: relative;
-}
-
-.head{
-    width: 1920px; height: 130px;
-    position: fixed; top: 0; left: 50%;
-    transform: translate(-50%, 0);
 }
 /* 상단이벤트창 */
 .event{
-    width: 100%; height: 30px;
+    width: 100vw; height: 30px;
     background-color: black;
     color: white;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
-    align-items : center;
-    position: relative;
     overflow: hidden;
+    padding-top: 5px;
+    position: fixed; top: 0; left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 10;
 }
 .event .slide{
     position: absolute;
     width: 100%; height: 100%;
-    text-align: center;
     transition: transform 0.5s ease;
 }
 .envet .active{
@@ -35,129 +29,228 @@
 }
 /* 네비게이션 왼쪽 */
 header{
-    width: 100%; height: 100px;
-    margin: 0 auto;
+    width: 100vw; height: 70px;
     background-color: #ffffff;
+    display: flex;
+    z-index: 10;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    position: fixed; top: 30px; left: 50%;
+    transform: translate(-50%, 0);
+}
+.nav1 , .nav2{
+    display: flex;
 }
 .nav1 .gnb{
-    float: left;
-    margin-left: 40px;
-    padding-top: 15px;
-    position: absolute;
-    z-index: 10;
-}
-.nav1 .gnb>li{
-    float: left;
+    display: flex;
+    margin-top: 30px;
 }
 .nav1 .gnb a{
     display: block;
-    width: 140px; height: 50px;
-    align-items : center;
-    padding-top: 31px;
-    margin-right: 10px;
-    font-size: 20px;
-}
-.nav1 .gnb .gnb2 a{
-    margin-left: -15px;
-}
-.nav1 .gnb .gnb3 a{
-    margin-left: -20px;
+    width: 120px; height: 50px;
+    font-size: 13px;
 }
 .nav1 .submenu{
     display: none;
     background-color: #ffffff;
-    padding: 20px 50px;
+    width: 350px; height: 330px;
+    padding: 20px;
+    padding-left: 40px;
     position: absolute; 
-    left: -40px; top: 70px;
+    left: 0px; top: 70px;
+    text-align: left;
 }
-.nav1 .subInfo a{
-    position: relative;
-    z-index: 10;
-    width: 300px;
-
+.nav1 .submenu a{
+    width: 160px;
+    height: 50px;
+}
+.nav1 .subShop{
+    height: 380px;
 }
 /* 로고이미지 */
+header .logo{
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
 header .logo img{
-    width: 50px;
-    float: left;
-    padding-top: 30px;
-    margin-left: 935px;
+    width: 40px;
 }
 /* 네비게이션 오른쪽 */
 .nav2 .gnb{
-    float: right;
-    padding-top: 15px;
-}
-.nav2 .gnb li{
-    float: left;
+    display: flex;
+    margin-top: 30px;
 }
 .nav2 .gnb a{
     display: block;
-    width: 140px; height: 100px;
+    width: 120px; height: 50px;
     align-items : center;
-    padding-top: 30px;
-    margin-right: 10px;
-    font-size: 20px;
+    font-size: 13px;
 }
-.nav2 .gnb img{
-    width: 45px;
-}
-.nav2 .gnb .sub1 a{
-    margin-right: -15px;
-}
-.nav2 .gnb .sub3 a{
-    margin-right: -20px;
-}
-.nav2 .gnb .sub4 a{
-    width: 50px;
+.nav2 .gnb .sub4>a{
+    width: 90px;
     margin-right: 20px;
 }
+.nav2 .gnb .sub4 a img{
+    width: 25px;
+}
+.mobileNav2, .mobileNav{
+    display: none;
+}
+
+    /* 장바구니 클릭기능 */
+    .bag{
+        width: 500px; height: 100vh;
+        position: fixed; right: 0px; top: 0;
+        z-index: 10;
+        background-color: white;
+        display: none;
+    }
+    .bag h2{
+        font-size: 20px;
+        font-weight: normal;
+        padding: 30px 50px;
+        display: block;
+    }
+    .bag img{
+        width: 25px;
+        position: absolute; top: 30px; right: 30px;
+        float: right;
+        cursor: pointer;
+    }
+    .bag span{
+        display: block;
+        padding: 50px;
+        font-size: 13px;
+    }
+    .bag button{
+        position: absolute;
+        top: 300px; left: 50%;
+        transform: translate(-50%, 0);
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        padding: 15px 80px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    /* 언어선택 호버기능 */
+    .nav2 .gnb .sub4 ul{
+        display: none;
+    }
+    .nav2 .gnb .sub4:hover .lang_choice{
+        display: flex;
+    }
+    .lang_choice {
+        width: 400px; height: 100vh;
+        background-color: white;
+        position: absolute; right: 0; top: 70px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .lang_choice li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        margin-right: 20px;
+    }
+    .lang_choice li a {
+        padding: 20px 15px;
+        margin-right: 10px;
+        text-align: right;
+        font-size: 13px;
+    }
+    .lang_choice>li>img {
+        width: 25px;
+    }
+    /* 검색버튼 클릭 창 */
+    .modal{
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed; top: 0; right: 0;
+        z-index: 10;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    .modal hr{
+        width: 350px; height: 1px;
+        border: none;
+        background-color: #ffffff;
+        position: fixed; top: 55%; left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .modal span{
+        text-align: center;
+        font-size: 13px;
+        position: fixed; top: 60%; left: 50%;
+        transform: translate(-50%, 0);
+        color: #ffffff;
+    }
+    .close {
+        width: 40px;
+        cursor: pointer;
+        position: absolute; right: 100px; top: 100px;
+    }
+
 
 /* 메인 */
 main{
-    width: 1920px; 
+    width: 100vw; 
     margin: 0 auto;
-    margin-top: 130px;
+    margin-top: 100px;
 }
 
 .detail{
-    width: 800px;
-    margin-left: 200px;
+    width: 60vw; height: 960px;
+    overflow: hidden;
+    float: left;
+    overflow-y: scroll;
 }
 .detail img{
-    width: 800px;
+    width: 90%; height: auto;
+}
+.detail::-webkit-scrollbar {
+    display: none; /* 스크롤바 숨기기 */
 }
 
 .rec{
-    width: 1770px; height: 672px;
-    margin: 0 auto;
+    width: 100vw; height: 620px;
+    clear: both;
 }
 .rec h3{
     display: block;
-    width: 100%; height: 14px;
+    padding: 2vw;
 }
 .rec .goods{
-    width: 100%; height: 658px;
+    text-align: center;
 }
 .rec .goods div{
     float: left;
     width: 431px; height: 518px;
 }
+.rec .goods img {
+    width: 100%;
+}
 /* 메인 우측 구매 */
 
 .fix{
-    width: 638px; height: 1216px;
-    position: fixed; top: 140px; right: 200px;
-    /* border: 1px solid #333; */
+    width: 40vw; height: 960px;
+    float: right;
+    margin-top: 20px;
 }
 .fix .h p{
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 15px;
 }
 .fix .size p{
-    font-size: 16px;
-    padding-bottom: 20px;
-    padding-top: 30px;
+    font-size: 13px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .fix .size li{
     padding: 10px 15px;
@@ -176,12 +269,15 @@ main{
     width: 313px; height: 38px;
     background-color: black;
     color: #ffffff;
+    border: none;
+    font-size: 11px;
 }
 .fix .btn .fir{
     margin-right: 2px;
 }
 
 .box{
+    width: 100%; height: 125px;
     margin-top: 25px;
 }
 .naver{
@@ -193,7 +289,7 @@ main{
 .naver p{
     font-size: 10px; 
     float: left;
-    padding: 10px 5px;
+    padding: 17px 5px;
     padding-right: 20px;
 }
 .naver .n_pay{
@@ -203,12 +299,12 @@ main{
     background-color: #09C85E;
     margin: 10px 0px;
     margin-right: 10px;
-    padding: 13px 15px; 
+    padding: 15px 15px; 
 }
 .naver .n_pay img{
     width: 23px;
     float: left;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 .naver .n_pay h2{
     font-size: 16px;
@@ -218,7 +314,7 @@ main{
     width: 51px; height: 51px;
     border: 1px solid #333;
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 16px 18px;
     margin: 10px 0px;
     margin-right: 10px;
     font-size: 16px;
@@ -247,9 +343,14 @@ main{
 .kakao p{
     font-size: 13px; 
     float: left;
-    padding: 10px 5px;
+    padding: 14px 5px;
     padding-right: 5px;
 }
+.kakao p:nth-child(1) {
+    padding-top: 20px;
+    font: 11px;
+}
+
 .kakao .k_pay{
     float: left;
     width: 126px; height: 51px;
@@ -273,23 +374,24 @@ main{
     background-color: #FFDE00;
     border-radius: 10px;
     margin: 10px 0px;
-    padding: 10px 5px;
+    padding: 16px 10px;
     font-size: 16px;;
 }
 .kakao .alr img{
-    width: 18px; height: 18px;
+    width: 21px;
     float: left;
 }
-.kakao .alr p{
-    font-size: 14px;
+.kakao span{
+    font-size: 14px; 
     float: left;
 }
 .kakao .alr div{
     width: 51px; height: 17px;
     border-radius: 8px;
     background-color: #E65F3E;
-    position: absolute; top: 3px; right: 61px;
+    position: absolute; top: 3px; right: 64px;
     font-size: 10px;
+    padding: 3px;
     text-align: center;
     color: #ffffff;
 }
@@ -298,7 +400,7 @@ main{
     width: 51px; height: 51px;
     border: 1px solid #333;
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 16px 18px;
     margin: 10px 0px;
     margin-right: 5px;
     font-size: 16px;
@@ -313,23 +415,32 @@ main{
     background-color: #ffffff;
     margin-top: 10px;
 }
+
 .info span{
     display: block;
-    font-size: 16px;
+    font-size: 14px;
+    text-decoration: underline;
     margin-right: 30px;
     padding: 20px 0px;
     float: left;
+}
+.info p {
+    font-size: 14px;
+    display: block;
+    width: 100%; height: 250px; 
+    overflow-y: scroll;
 }
 .info div{
     clear: both;
     content: "";
     display: block;
-    width: 606px; height: 468px;
-    overflow: hidden;
 }
+
+
+
 /* 푸터 */
 footer{
-    width: 1920px; height: 125px;
+    width: 100%; height: 125px;
     clear: both; 
     content: "";
     display: block;
@@ -356,55 +467,61 @@ footer p{
     font-size: 16px;
 }
 
-/* 플로팅버튼 */
-.floating{
-    position: fixed; right: 20px; bottom: 120px;
-    width: 80px; height: 80px;
-}
-.floating .quick{
-    position: absolute; right: 5px; top: 10px;
-    z-index: 1;
-}
-.floating .quick img{
-    cursor: pointer;
-}
-.floating .p{
-    float: left;
-    width: 80px; height: 80px; border-radius: 40px;
-    background-color: #f6f6f6;
-    overflow: hidden;
-    color: white;
-    padding: 30px;
-    position: absolute; right: 55px; bottom: -79px;
-}
-.floating .p .nom{
-    width: 330px;
-    padding-bottom: 30px;
-}
-.floating .p .group div{
-    float: left;
-    color: #333;
-    font-size: 13px;
-    text-align: center;
-}
-.floating .p .home{
-    display: block;
-    padding: 25px 40px;
-}
-.floating .p .chat{
-    display: block;
-    padding: 30px 40px;
-}
-.floating .p .set{
-    display: block;
-    padding: 30px 40px;
-}
-.floating .p .home img{
-    width: 30px;
-}
-.floating .p .chat img{
-    width: 25px;
-}
-.floating .p .set img{
-    width: 30px;
-}
+    /* 플로팅버튼 */
+    .floating {
+        position: fixed;
+        right: 70px;
+        bottom: 50px;
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .floating .quick {
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .floating .quick img {
+        cursor: pointer;
+        width: 90px;
+        height: auto;  /* 이미지의 비율 유지 */
+    }
+    
+    .quicksos {
+        transform-origin: bottom;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: none;
+    }
+    .group{
+        width: 400px;
+        height: 710px;
+        border-radius: 30px;
+        overflow: hidden;
+        background-color: #f6f6f6;
+        color: white;
+        box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.4);
+        position: fixed; bottom: 90px; right: 20px;
+    }
+    .floating .quicksos .nom{
+        width: 400px;
+    }
+    .floating .quicksos .group div{
+        float: left;
+        color: #333;
+        font-size: 13px;
+        text-align: center;
+    }
+    .cls_chat{
+        width: 60px; height: 60px;
+        background-color: #f6f6f6;
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.4);
+        position: fixed; bottom: 20px; right: 20px;
+    }
+    .cls_chat img{
+        width: 30px;
+    }

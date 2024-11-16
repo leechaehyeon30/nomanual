@@ -19,33 +19,33 @@
             <header>
                 <nav class="nav1">
                     <ul class="gnb">
-                        <li class="gnb1">
+                        <li id="nav_shop">
                             <a href="index_shop.html">SHOP</a>
                             <ul class="submenu subShop">
                                 <li>
-                                    <a href="#">ALL</a>
+                                    <a href="index_shop.html">ALL</a>
                                 </li>
                                 <li>
-                                    <a href="#">OUTER</a>
+                                    <a href="index_shop.html">OUTER</a>
                                 </li>
                                 <li>
-                                    <a href="#">TOP</a>
+                                    <a href="index_shop.html">TOP</a>
                                 </li>
                                 <li>
-                                    <a href="#">BOTTOM</a>
+                                    <a href="index_shop.html">BOTTOM</a>
                                 </li>
                                 <li>
-                                    <a href="#">ACC</a>
+                                    <a href="index_shop.html">ACC</a>
                                 </li>
                                 <li>
-                                    <a href="#">GOODS</a>
+                                    <a href="index_shop.html">GOODS</a>
                                 </li>
                                 <li>
-                                    <a href="#">EXCLUSIVE</a>
+                                    <a href="index_shop.html">EXCLUSIVE</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="gnb2">
+                        <li id="nav_info">
                             <a href="#">INFO</a>
                             <ul class="submenu subInfo">
                                 <li>
@@ -68,18 +68,25 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="gnb3">
-                            <a href="#">ARCHIVE</a>
+                        <li>
+                            <a href="https://nomanual-official.com/" target="_blank">ARCHIVE</a>
                         </li>
-                        <li class="gnb4">
+                        <li id="search_Btn">
                             <a href="#">SERCH</a>
                         </li>
                     </ul>
                 </nav>
-                <a class="logo" href="index.html">
-                    <img id="logo" src="./img/header/logo_monr.png" alt="노매뉴얼 로고">
-                </a>
-                <nav class="nav2">
+                <div class="mobileNav">
+                    <img src="img/icon/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="메뉴 이미지">
+                </div>
+                <div>
+                    <h1 class="logo">
+                        <a href="#">
+                            <img src="./img/header/logo_monr.png" alt="로고이미지">
+                        </a>
+                    </h1>
+                </div>
+                <div class="nav2">
                     <ul class="gnb">
                         <li class="sub1">
                             <a href="#">LOGIN</a>
@@ -92,13 +99,42 @@
                         </li>
                         <li class="sub4">
                             <a href="#">
-                                <img src="img/header/태극기고해상도rgb이미지-jpg.jpg" alt="언어선택 아이콘">
+                                <img src="img/header/korea.jpg" alt="언어선택 아이콘">
                             </a>
+                            <ul class="lang_choice">
+                                <li>
+                                    <a href="#">INTERNATIONAL</a>
+                                    <img src="img/header/korea.jpg" alt="한국어">
+                                </li>
+                                <li>
+                                    <a href="#">KOREA</a>
+                                    <img src="img/header/korea.jpg" alt="한국어">
+                                </li>
+                                <li>
+                                    <a href="#">JAPAN</a>
+                                    <img src="img/header/korea.jpg" alt="한국어">
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                </nav>
+                </div>
+                <div class="mobileNav2">
+                    <img id="modal_open" src="img/icon/search_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                    <img id="bag_open" src="img/icon/local_mall_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="">
+                </div>
             </header>
-        </div>
+            <div class="bag">
+                <h2>BAG (0)</h2>
+                <span>장바구니가 비어있습니다.</span>
+                <img class="cls_bag" src="img/icon/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="닫기">
+                <button>장바구니로 이동</button>
+            </div>
+            <div class="modal" style="display: none;">
+                <hr>
+                <span>검색어를 입력하시고 엔터를 누르세요. <br> Enter keywords and press Return to search.</span>
+                <img class="close" src="img/icon/close_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="닫는 이미지">
+            </div>
+            </div>
         <main>
             <div class="detail">
                 <img src="img/buy_page/202409051428480922299113666d9419016852.jpg" alt="">
@@ -152,7 +188,7 @@
                         <div class="alr">
                             <div>혜택알림</div>
                             <img src="img/buy_page/카카오채널.png" alt="">
-                            <p>+</p>
+                            <span>+</span>
                         </div>
                         <div class="hat">찜</div>
                         <hr>
@@ -242,82 +278,18 @@
             </p>
         </footer>
         <div class="floating">
-            <span class="quick">
-                <img id="myImage" src="img/footer/file.png" alt="플로팅버튼" onclick="changeImage()">
-            </span>
-            <div class="p">
-                <img class="nom" src="img/footer/float_img.png" alt="내용">
+            <div class="quick">
+                <img id="myImage" src="img/footer/file.png" alt="플로팅버튼">
+            </div>
+            <div class="quicksos">
                 <div class="group">
-                    <div class="home">
-                        <img src="img/footer/home_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="홈버튼">
-                        <p>홈</p>
-                    </div>
-                    <div class="chat">
-                        <img src="img/footer/sms_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="대화버튼">
-                        <p>대화</p>
-                    </div>
-                    <div class="set">
-                        <img src="img/footer/settings_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="설정버튼">
-                        <p>설정</p>
-                    </div>
+                    <img class="nom" src="img/footer/float_img.png" alt="내용">
+                </div>
+                <div class="cls_chat">
+                    <img src="img/icon/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="닫기버튼">
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        // 퀵버튼
-        let state = true;
-        let w390 = document.querySelector(".p")
-        let quickBtn = document.querySelector(".quick");
-        quickBtn.onclick = function(){
-            if (state == true) {
-                w390.style.width = "390px";
-                w390.style.height = "690px";
-                w390.style.transitionDuration = "1s";
-                w390.style.transitionDuration = "1s";
-                state = false;
-                console.log(state);
-            }else if(state == false){
-                w390.style.width = "80px";
-                w390.style.height = "80px";
-                state = true
-            }
-        };
-        // 퀵버튼 추가설정
-        let isImage1 = true;
-
-            function changeImage() {
-                const image = document.getElementById('myImage');
-                
-                if (isImage1) {
-                    image.src = "img/footer/x_btn.png"; 
-                    image.style.right = "0px";
-                    image.style.top = "110px";
-                    image.style.position = "absolute"
-                } else {
-                    image.src = "img/footer/file.png";
-                    image.style.right = "5px";
-                    image.style.top = "10px";
-                }
-                
-                isImage1 = !isImage1;
-            }
-
-        //시간변경 로고변화
-        let logoImg = document.querySelector("#logo");
-
-        const d = new Date();
-        let cuHour = d.getHours();
-
-        if (cuHour >= 9 && cuHour <= 18) {
-            logoImg.setAttribute("src", "img/header/logo_monr.png");
-        }else if (cuHour >= 19 && cuHour <= 23) {
-            logoImg.setAttribute("src", "img/header/logo_night.png");
-        }else if (cuHour >= 0 && cuHour <= 9) {
-            logoImg.setAttribute("src", "img/header/logo_night.png");
-        }
-        document.write(cuHour);
-    </script>
 </body>
 </html>
