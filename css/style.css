@@ -1,6 +1,10 @@
-@media all and (max-width:500px){
+@media all and (max-width:520px){
     body{
         overflow-x: hidden;
+    }
+    .wrap {
+        width: 100%;
+
     }
     /* 상단이벤트창 */
     .event{
@@ -57,6 +61,7 @@
     }
     .mobileNav2{
         position: absolute; right: 20px;
+        display: flex;
     }
     .mobileNav2 img{
         width: 25px;
@@ -86,6 +91,10 @@
         width: 25px;
         position: fixed; top: 30px; right: 30px;
         color: #ffffff;
+    }
+    /* 로그인 */
+    .login {
+        display: none;
     }
     /* 장바구니 클릭기능 */
     .bag{
@@ -146,8 +155,9 @@
     }
     .sec1 h2{
         font-size: 20px;
-        padding: 20px;
         font-weight: bold;
+        margin-top: 10vw;
+        margin-left: 10vw;
     }
     .sec1 .middle{
         position: relative;
@@ -162,17 +172,22 @@
         height: auto;
         position: relative;
     }
-    .sec1 .item a {
+    .sec1 .item li {
         margin: 10px 0;
         display: none;
     }
     .sec1 .item img{
         width: 100%;
         height: auto;
+        margin-bottom: 3vw;
         transition: transform 0.3s;    /* 슬라이드 효과를 위한 트랜지션 */
     }
-    .item a:first-child {
+    .item li:first-child {
         display: block; /* 첫 번째 이미지만 표시 */
+    }
+    .item li{
+        text-align: center;
+        font-size: 15px;
     }
     .sec1 .prev{
         width: 40px; height: 40px;
@@ -337,6 +352,7 @@
         cursor: pointer;
     }
     .floating .quicksos{
+        display: none;
         float: left;
         width: 10px; height: 10px; border-radius: 40px;
         overflow: hidden;
@@ -361,12 +377,14 @@
         width: 330px;
     }
 }
-@media all and (min-width:500px) and (max-width:1920px) {
+@media all and (min-width:1281px) and (max-width:1920px) {
     body{
         background-color: white;
+        overflow-x: hidden;
     }
     .wrap{
-        width: 100vw; height: 100vh; 
+        width: 1920px;
+        height: 100vh; 
         position: relative;
     }
     /* 상단이벤트창 */
@@ -413,10 +431,11 @@
     .nav1 .gnb{
         display: flex;
         margin-top: 30px;
+        margin-left: 20px;
     }
     .nav1 .gnb a{
         display: block;
-        width: 120px; height: 50px;
+        width: 80px; height: 50px;
         font-size: 13px;
     }
     .nav1 .submenu{
@@ -452,12 +471,12 @@
     }
     .nav2 .gnb a{
         display: block;
-        width: 120px; height: 50px;
+        width: 80px; height: 50px;
         align-items : center;
         font-size: 13px;
     }
     .nav2 .gnb .sub4>a{
-        width: 90px;
+        width: 80px;
         margin-right: 20px;
     }
     .nav2 .gnb .sub4 a img{
@@ -465,6 +484,75 @@
     }
     .mobileNav2, .mobileNav{
         display: none;
+    }
+    /* 로그인 클릭기능 */
+    .login{
+        width: 500px; height: 100vh;
+        position: fixed; right: 0px; top: 0;
+        z-index: 10;
+        background-color: white;
+        display: none;
+    }
+    .login .signtxt{
+        margin-top: 20vw;
+    }
+    .login h2{
+        font-size: 18px;
+        font-weight: normal;
+        padding: 30px 50px;
+        display: block;
+    }
+    .login .cls_login{
+        width: 25px;
+        position: absolute; top: 30px; right: 30px;
+        float: right;
+        cursor: pointer;
+    }
+    .login ul {
+        display: flex;
+        margin: 2vw 10%;
+    }
+    .login ul li {
+        font-size: 12px;
+        text-decoration: underline;
+        margin-right: 1vw;
+    }
+    .login div {
+        display: block;
+        font-size: 12px;
+        cursor: pointer;
+        margin: 0 auto;
+        margin-bottom: 1vw;
+    }
+    .login .grp_div {
+        display: flex;
+        width: 80%;
+    }
+    .login .grp_div>div{
+        width: 49%; 
+        background-color: black;
+        color: white;
+        padding: 15px;
+        margin: 0;
+        text-align: center;
+    }
+    .login .grp_div>div:nth-child(1) {
+        margin-right: 2%;
+    }
+    .login .border{
+        width: 80%; 
+        border: 1px solid black;
+        color: black;
+        padding: 15px;
+    }
+    .login .black{
+        width: 80%; 
+        background-color: black;
+        color: white;
+        padding: 15px;
+    }
+    .login div>img {
+        float: right;
     }
     /* 장바구니 클릭기능 */
     .bag{
@@ -565,80 +653,95 @@
     }
     /* 메인비주얼 */
     .visual{
-        width: 100vw; height: 50vw;
+        width: 1980px; height: 50vw;
         position: relative;
         z-index: 0;
         margin-top: 100px;
         overflow: hidden;
     }
     .visual .slider{
+        width: 100vw;
+    }
+    .visual .slide-img{
         display: flex;
     }
-    .visual .img1{
-        width: 45vw; height: auto;
-    }
-    .visual .img{
-        width: 55vw; height: auto;
+    .visual .slide-img img{
+        width: 100%; height: auto;
     }
     /* 섹션1 */
     .sec1{
-        width: 100vw; height: 36vw;
+        width: 100vw; height: 60vw;
+        padding: 6vw 0;
     }
     .sec1 h2{
         font-size: 25px;
         font-weight: bold;
-        padding: 2vw;
+        margin: 0vw 12vw;
+        margin-bottom: 4vw;
     }
     .sec1 .middle{
         position: relative;
-        width: 100%; height: 22vw;
+        width: 80%; height: 22vw;
         margin-bottom: 1vw;
-    }
-    .sec1 .item{
-        width: 95%;
-        display: flex;
         margin: 0 auto;
     }
-    .sec1 .item img{
-        width: 95%;
-        display: block;
+    .sec1 .item{
+        width: 100%;
+        margin: 0 auto;
+        align-items: center;
+        text-align: center;
+        font-size: 13px;
     }
+    .sec1 .item ul {
+        align-items: center;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+    }
+    .sec1 .item li {
+        width: 20vw;
+        height: 20vw;
+    }
+    .sec1 .item li img{
+        width: 100%;
+        display: block;
+        margin-bottom: 2vw;
+        transition: width 0.5s ease;
+        transform-origin: center;
+    }
+    .sec1 .item li:nth-child(1){
+        width: 40vw; height: 40vw;
+        font-size: 17px;
+    }
+    .sec1 .item .first img{
+        width: 100%;
+    }
+    .sec1 .item li:hover {
+        font-size: 17px;
+    }
+    .sec1 .item li:hover{
+        width: 40vw; height: 40vw;
+        transition: width 0.5s ease;
+    }
+
     .sec1 .prev{
         width: 60px; height: 60px;
         background-color: rgba(255, 255, 255, 0);
-        border: 1px solid black; 
+        border: none; 
         border-radius: 10px;
         padding: 5px 13px;
-        position: absolute; left: 20px; top: 120px;
+        position: absolute; left: -3vw; top: 15vw;
     }
     .sec1 .prev img, .next img{
-        width: 50px;
+        width: 40px;
     }
     .sec1 .next{
         width: 60px; height: 60px;
         background-color: rgba(255, 255, 255, 0);
-        border: 1px solid black; 
+        border: none; 
         border-radius: 10px;
         padding-top: 5px;
-        position: absolute; right: 20px; top: 120px;
-    }
-    .sec1 .underbar{
-        width: 100%; height: 100px;
-        position: relative;
-        display: grid;
-        place-items: center;
-    }
-    .underbar .long{
-        width: 90%; height: 2px;
-        position: absolute;
-        border: none;
-        background-color: #c0c0c0;
-    }
-    .underbar .short{
-        width: 148px; height: 2px;
-        position: absolute; left: auto;
-        border: none;
-        color: black;
+        position: absolute; right: -3vw; top: 15vw;
     }
     /* 섹션2 */
     .sec2{
@@ -651,63 +754,98 @@
     .sec2 .img1{
         width: 40vw; height: 35vw;
         float: left;
-        padding: 30px;
+    }
+    .sec2 .squar {
+        position: absolute; top: 1.5vw; left: 38vw;
+        width: 45vw; height: 32vw;
+        border: 1px solid black;
     }
     .sec2 .frame{
         width: 60vw; height: 35vw;
-        overflow: hidden;
         position: relative;
     }
-    .sec2 .imgGroup{
-        width: 300vw;
-        transition: transform 0.5s ease;
+    .sec2 .frame h2 {
+        width: 17vw;
+        padding: 10px;
+        background-color: white;
+        text-align: center;
+    }
+    .sec2 .imgGroup {
         display: flex;
     }
-    
-    .sec2 .imgGroup img{
-        width: 100vw; height: 100vh;
+    .sec2 .contentsBox {
+        height: 30vw;
     }
+    .sec2 .contentsBox .content{
+        padding-left: 8vw;
+        margin-bottom: 2vw;
+    }
+    .sec2 .content img{
+        width: 6vw;
+    }
+    .sec2 .content span{
+        display: block;
+        text-align: center;
+        font-size: 10px;
+        width: 7vw;
+    }
+    .sec2 .one {
+        padding-left: 1.5vw;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+    .sec2 .one img{
+        width: 25vw;
+    }
+    .sec2 .one span{
+        /* padding-left: 1vw; */
+        font-size: 15px;
+        width: 12vw;
+    }
+
     .sec2 .prev{
         width: 60px; height: 60px;
         background-color: rgba(255, 255, 255, 0);
-        border: 1px solid black; 
+        border: none; 
         border-radius: 10px;
         padding: 5px 13px;
-        position: absolute; left: 42%; top: 270px;
+        position: absolute; left: 41vw; top: 15.5vw;
     }
     .sec2 .prev img, .sec2 .next img{
-        width: 50px;
+        width: 25px;
     }
     .sec2 .next{
         width: 60px; height: 60px;
         background-color: rgba(255, 255, 255, 0);
-        border: 1px solid black; 
+        border: none; 
         border-radius: 10px;
         padding-top: 5px;
-        position: absolute; right: 20px; top: 270px;
+        position: absolute; right: 17vw; top: 15.5vw;
     }
 
     /* 섹션 3 */
     .sec3{
-        width: 100%; height: 45vw;
+        width: 100vw; height: 50vw;
         display: block;
+        padding: 2vw 0;
     }
     .sec3 .product{
         width: 100%; height: 6vw;
         display: grid;
         place-content: center;
+        margin-top: 3vw;
     }
     .sec3 .product ul{
         display: flex;
-        /* align-items: center; */
     }
     .sec3 .product a{
         display: block;
         font-size: 18px;
         font-weight: bold;
-        padding: 20px 40px;
+        padding: 20px 20px;
         border-radius: 5px;
-        margin: 0px 40px;
+        margin: 0px 20px;
     }
     .sec3 .product a:hover{
         background-color: rgba(0, 0, 0, 0.2);
@@ -716,21 +854,22 @@
         width: 100%; height: auto;
         position: relative;
         display: flex;
+        margin-top: 3vw;
     }
     .sec3 .capitem{
-        width: 45%; height: auto;
-    }
-    .sec3 .capitem img{
-        width: 100%;
-        margin-top: 40px;
+        width: 50%; height: auto;
+        position: relative;
     }
     .sec3 .outeritem{
-        width: 55%; height: auto;
-        margin-left: -1vw;
-        overflow: hidden;
+        width: 50%; height: auto;
+        position: relative;
     }
-    .sec3 .outeritem img{
-        width: 100%;
+    .sec3 .capitem img{
+        width: 80%;
+        position: absolute; top: 0; right: 0;
+    }
+    .sec3 .outeritem img {
+        width: 80%;
     }
     /* 푸터 */
     footer{
